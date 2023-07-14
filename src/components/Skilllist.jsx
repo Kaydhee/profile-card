@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Skilllist = (props) => {
+const Skilllist = ({ skillObj }) => {
+	// console.log(skillObj);
 	return (
-		<span
-			className='skill__span'
-			style={{ backgroundColor: props.color }}>
-			{props.skill} {props.emoji}
-		</span>
+		<li
+			style={{ backgroundColor: skillObj.color }}
+			className='skill__span'>
+			{skillObj.skill} {`${skillObj.level === 'advanced' ? '💪' : '😒'}`}
+		</li>
 	);
 };
 
